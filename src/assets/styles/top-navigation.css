@@ -1,0 +1,59 @@
+#top-navigation .navbar {
+	background: #58C0E7;
+}
+
+#top-navigation .top-navigation--subtitle {
+	font-family: Montserrat_Light;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	/* line-height: 30px; */
+	/* padding: 15px; */
+
+	color: #FFFFFF;
+}
+
+#top-navigation .top-navigation--profile {
+	font-family: Montserrat_Light;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	/* identical to box height */
+
+
+	color: #FFFFFF;
+}
+
+#top-navigation button {
+	padding:0px;
+	background: transparent;
+  border: 0px;
+}
+
+
+#top-navigation #top-navigation--logo {
+	font-family: Montserrat_Light;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 37px;
+	padding: 10px 30px 0px 30px;
+	color: white;
+	background: #3b4048;
+	max-width: 300px !important;
+}
+
+#top-navigation #top-navigation--logo .top-navigation--font-logo {
+	color: #FCAD46 !important;
+}
+
+#top-navigation #top-navigation--logo .top-navigation--font-info {
+	font-family: Montserrat_Light;
+	font-style: normal;
+	font-weight: 900;
+	font-size: 10px;
+	line-height: 12px;
+	text-align: right;
+	color: #BFBFBF;
+}
