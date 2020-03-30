@@ -6,13 +6,30 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+const MasterPemohon = require('./master-pemohon')
+const RegisterProposal = require('./register-proposal')
+const RegisterSurvey = require('./register-survey')
+const RegisterSurveyor = require('./register-surveyor')
+const Proposal = require('./proposal')
+const AnalisaProposal = require('./analisa-proposal')
+
 const routes = [
   {
     path: '/',
-    name: 'LayoutMain',
+    //name: 'LayoutMain',
     component: () =>
             import ('@/layouts/layout-main.vue'),
     children: [
+      ...MasterPemohon,
+      ...RegisterProposal,
+      ...RegisterSurvey,
+      ...RegisterSurveyor,
+      ...Proposal,
+      ...AnalisaProposal,
+      {
+        path: "/",
+        redirect: "/dashboard"
+      },
       {
         // UserProfile will be rendered inside User's <router-view>
         // when /user/:id/profile is matched
@@ -20,51 +37,7 @@ const routes = [
         name: 'dashboard',
         component: () => import(/* webpackChunkName: "dashboard" */ '@/views/view-dashboard.vue')
       },
-      {
-        path: '/penerima-pemohon-master',
-        name: 'penerima-pemohon-master',
-        component: () => import(/* webpackChunkName: "penerima-pemohon-master" */ '@/views/view-penerima-pemohon-master.vue')
-      },
-      {
-        path: '/penerima-pemohon-tambah',
-        name: 'penerima-pemohon-tambah',
-        component: () => import(/* webpackChunkName: "penerima-pemohon-tambah" */ '@/views/view-penerima-pemohon-tambah.vue')
-      },
-      {
-        path: '/penerima-pemohon-edit',
-        name: 'penerima-pemohon-edit',
-        component: () => import(/* webpackChunkName: "penerima-pemohon-edit" */ '@/views/view-penerima-pemohon-edit.vue')
-      },
-      {
-        path: '/proposal-tahap-1',
-        name: 'proposal-tahap-1',
-        component: () => import(/* webpackChunkName: "proposal-tahap-1" */ '@/views/view-proposal-tahap-1.vue')
-      },
-      {
-        path: '/proposal-tahap-2',
-        name: 'proposal-tahap-2',
-        component: () => import(/* webpackChunkName: "proposal-tahap-2" */ '@/views/view-proposal-tahap-2.vue')
-      },
-      {
-        path: '/proposal-tahap-3',
-        name: 'proposal-tahap-3',
-        component: () => import(/* webpackChunkName: "proposal-tahap-3" */ '@/views/view-proposal-tahap-3.vue')
-      },
-      {
-        path: '/proposal-tahap-4',
-        name: 'proposal-tahap-4',
-        component: () => import(/* webpackChunkName: "proposal-tahap-4" */ '@/views/view-proposal-tahap-4.vue')
-      },
-      {
-        path: '/proposal-tahap-5',
-        name: 'proposal-tahap-5',
-        component: () => import(/* webpackChunkName: "proposal-tahap-5" */ '@/views/view-proposal-tahap-5.vue')
-      },
-      {
-        path: '/proposal-tahap-6',
-        name: 'proposal-tahap-6',
-        component: () => import(/* webpackChunkName: "proposal-tahap-6" */ '@/views/view-proposal-tahap-6.vue')
-      },
+
     ]
   },
   // {
@@ -84,11 +57,11 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  //mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
 
-router.replace("/dashboard")
+//router.push("/dashboard")
 
 export default router

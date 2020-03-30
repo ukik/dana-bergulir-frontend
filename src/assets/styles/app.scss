@@ -1,0 +1,96 @@
+@font-face {
+	font-family: Montserrat_Light;
+	src: url(./fonts/Montserrat/Montserrat-Light.ttf);
+}
+
+@font-face {
+	font-family: Montserrat_Bold;
+	src: url(./fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+	font-family: Montserrat_Medium;
+	src: url(./fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+body {
+	background: #ECF0F1 !important;
+}
+
+.required-alert {
+	font-family: sans-serif;
+  margin-left: 5px;
+  color: red;
+  font-size: 14px;
+  font-weight: 100;
+  text-align: right;
+  margin-bottom: 0px;
+}
+
+.fullheight {
+	height: 100vh;
+}
+
+#button-prev {
+	border-radius: 10px;
+	border-width: 0px;
+	font-family: Montserrat_Light;
+	font-size: 14px;
+	text-align: center;
+	color: #ffffff;
+	background: #CACACA !important;
+}
+
+#button-print {
+	border-radius: 10px;
+	border-width: 0px;
+	font-family: Montserrat_Light;
+	font-size: 14px;
+	text-align: center;
+	color: #ffffff;
+	background: #05AF8F !important;
+}
+
+.button-div {
+	border-radius: 10px !important;
+	font-family: Montserrat_Light !important;
+	font-size: 14px !important;
+	color: #ffffff !important;
+	background: #58C0E7 !important;
+}
+
+.form-control:disabled, .form-control[readonly],  {
+    background-color: #fff !important;
+    opacity: 1;
+}
+
+
+/* table body-cell font-size */
+td {
+	font-size: 14px;
+}
+
+/* radio font-size */
+.custom-radio .custom-control-label {
+	/* font-size: 13px; */
+}
+
+/* checkbox font-size */
+.custom-checkbox .custom-control-label {
+	/* font-size: 13px; */
+}
+
+/* input, select, textarea font-size */
+input, select, textarea {
+	/* font-size: 13px !important; */
+}
+
+input:focus, input:active, select:focus, select:active, textarea,
+.btn:focus, .btn:active, .page-link:active, .page-link:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+canvas#line-chart {
+  background-color: #fff;
+}

@@ -9,96 +9,34 @@ const UiProposalMeta = resolve => {
     )
 }
 
-const UiProposalTahap1Content = resolve => {
+const UiProposalContentMaster = resolve => {
     require.ensure(
-        ['./ui-proposal-tahap-1-content'],
+        ['./ui-proposal-content-master'],
         () => {
-            resolve(require('./ui-proposal-tahap-1-content'))
-        }, 'ui-proposal-tahap-1-content'
+            resolve(require('./ui-proposal-content-master'))
+        }, 'ui-proposal-content-master'
     )
 }
 
-const UiProposalTahap2Content = resolve => {
+const UiProposalContentDetail = resolve => {
     require.ensure(
-        ['./ui-proposal-tahap-2-content'],
+        ['./ui-proposal-content-detail'],
         () => {
-            resolve(require('./ui-proposal-tahap-2-content'))
-        }, 'ui-proposal-tahap-2-content'
+            resolve(require('./ui-proposal-content-detail'))
+        }, 'ui-proposal-content-detail'
     )
 }
+// const UiProposalContentEdit = resolve => {
+//     require.ensure(
+//         ['./ui-proposal-content-edit'],
+//         () => {
+//             resolve(require('./ui-proposal-content-edit'))
+//         }, 'ui-proposal-content-edit'
+//     )
+// }
 
-const UiProposalTahap3Content = resolve => {
-    require.ensure(
-        ['./ui-proposal-tahap-3-content'],
-        () => {
-            resolve(require('./ui-proposal-tahap-3-content'))
-        }, 'ui-proposal-tahap-3-content'
-    )
-}
-
-const UiProposalTahap4Content = resolve => {
-    require.ensure(
-        ['./ui-proposal-tahap-4-content'],
-        () => {
-            resolve(require('./ui-proposal-tahap-4-content'))
-        }, 'ui-proposal-tahap-4-content'
-    )
-}
-
-const UiProposalTahap4ContentProdukSasaranModal = resolve => {
-    require.ensure(
-        ['./ui-proposal-tahap-4-content-produk-sasaran-modal'],
-        () => {
-            resolve(require('./ui-proposal-tahap-4-content-produk-sasaran-modal'))
-        }, 'ui-proposal-tahap-4-content-produk-sasaran-modal'
-    )
-}
-
-const UiProposalTahap4ContentPerkembanganPenjualanModal = resolve => {
-    require.ensure(
-        ['./ui-proposal-tahap-4-content-perkembangan-penjualan-modal'],
-        () => {
-            resolve(require('./ui-proposal-tahap-4-content-perkembangan-penjualan-modal'))
-        }, 'ui-proposal-tahap-4-content-perkembangan-penjualan-modal'
-    )
-}
-
-const UiProposalTahap5Content = resolve => {
-    require.ensure(
-        ['./ui-proposal-tahap-5-content'],
-        () => {
-            resolve(require('./ui-proposal-tahap-5-content'))
-        }, 'ui-proposal-tahap-5-content'
-    )
-}
-
-const UiProposalTahap6Content = resolve => {
-    require.ensure(
-        ['./ui-proposal-tahap-6-content'],
-        () => {
-            resolve(require('./ui-proposal-tahap-6-content'))
-        }, 'ui-proposal-tahap-6-content'
-    )
-}
-
-const UiProposalTahap6ContentPinjamanModal = resolve => {
-    require.ensure(
-        ['./ui-proposal-tahap-6-content-pinjaman-modal'],
-        () => {
-            resolve(require('./ui-proposal-tahap-6-content-pinjaman-modal'))
-        }, 'ui-proposal-tahap-6-content-pinjaman-modal'
-    )
-}
-
+// Vue.component("ui-proposal-content-edit", UiProposalContentEdit)
+// Vue.component("ui-proposal-content-tambah", UiProposalContentTambah)
 Vue.component("ui-proposal-meta", UiProposalMeta)
-Vue.component("ui-proposal-tahap-1-content", UiProposalTahap1Content)
-Vue.component("ui-proposal-tahap-2-content", UiProposalTahap2Content)
-Vue.component("ui-proposal-tahap-3-content", UiProposalTahap3Content)
-
-Vue.component("ui-proposal-tahap-4-content", UiProposalTahap4Content)
-Vue.component("ui-proposal-tahap-4-content-produk-sasaran-modal", UiProposalTahap4ContentProdukSasaranModal)
-Vue.component("ui-proposal-tahap-4-content-perkembangan-penjualan-modal", UiProposalTahap4ContentPerkembanganPenjualanModal)
-
-Vue.component("ui-proposal-tahap-5-content", UiProposalTahap5Content)
-Vue.component("ui-proposal-tahap-6-content", UiProposalTahap6Content)
-Vue.component("ui-proposal-tahap-6-content-pinjaman-modal", UiProposalTahap6ContentPinjamanModal)
+Vue.component("ui-proposal-content-master", UiProposalContentMaster)
+Vue.component("ui-proposal-content-detail", UiProposalContentDetail)

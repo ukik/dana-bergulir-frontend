@@ -1,0 +1,17 @@
+const analisa_proposal = {
+	getters_analisa_proposal:"getters_analisa_proposal",
+	getters_analisa_proposal_edit:"getters_analisa_proposal_edit",
+
+	mutation_analisa_proposal:"mutation_analisa_proposal",
+  mutation_analisa_proposal_add_payload_items:"mutation_analisa_proposal_add_payload_items",
+  mutation_analisa_proposal_edit_payload_items:"mutation_analisa_proposal_edit_payload_items",
+	mutation_analisa_proposal_delete_payload_items:"mutation_analisa_proposal_delete_payload_items",
+
+	dispatch_analisa_proposal:"dispatch_analisa_proposal",
+  dispatch_analisa_proposal_add_payload_items:"dispatch_analisa_proposal_add_payload_items",
+  dispatch_analisa_proposal_edit_payload_items:"dispatch_analisa_proposal_edit_payload_items",
+	dispatch_analisa_proposal_delete_payload_items:"dispatch_analisa_proposal_delete_payload_items",
+
+}
+
+module.exports = analisa_proposal

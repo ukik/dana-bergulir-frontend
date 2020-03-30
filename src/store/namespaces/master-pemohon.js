@@ -1,0 +1,25 @@
+const pemohon = {
+	getters_pemohon:"getters_pemohon",
+	getters_pemohon_edit:"getters_pemohon_edit",
+	getters_pemohon_reference_options_provinsi:"getters_pemohon_reference_options_provinsi",
+  getters_pemohon_reference_options_kabupaten:"getters_pemohon_reference_options_kabupaten",
+  getters_pemohon_reference_options_kecamatan:"getters_pemohon_reference_options_kecamatan",
+
+	mutation_pemohon:"mutation_pemohon",
+  mutation_pemohon_add_payload_items:"mutation_pemohon_add_payload_items",
+  mutation_pemohon_edit_payload_items:"mutation_pemohon_edit_payload_items",
+	mutation_pemohon_delete_payload_items:"mutation_pemohon_delete_payload_items",
+	mutation_pemohon_reference_options_provinsi:"mutation_pemohon_reference_options_provinsi",
+  mutation_pemohon_reference_options_kabupaten:"mutation_pemohon_reference_options_kabupaten",
+  mutation_pemohon_reference_options_kecamatan:"mutation_pemohon_reference_options_kecamatan",
+
+	dispatch_pemohon:"dispatch_pemohon",
+  dispatch_pemohon_add_payload_items:"dispatch_pemohon_add_payload_items",
+  dispatch_pemohon_edit_payload_items:"dispatch_pemohon_edit_payload_items",
+	dispatch_pemohon_delete_payload_items:"dispatch_pemohon_delete_payload_items",
+	dispatch_pemohon_reference_options_provinsi:"dispatch_pemohon_reference_options_provinsi",
+  dispatch_pemohon_reference_options_kabupaten:"dispatch_pemohon_reference_options_kabupaten",
+  dispatch_pemohon_reference_options_kecamatan:"dispatch_pemohon_reference_options_kecamatan",
+}
+
+module.exports = pemohon

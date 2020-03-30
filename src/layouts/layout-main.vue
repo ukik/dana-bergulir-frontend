@@ -10,9 +10,11 @@ ul.nav.nav-pills {
 <template>
 
 <div>
+    <vue-snotify></vue-snotify>
+
     <div class="main-wrapper fullheight">
         <div class="row m-0">
-	          <div id="side-navigation" class="col">
+	          <div id="side-navigation" class="col-4">
 	            <div class="fullheight">
 	                <div>
 	                    <b-nav vertical pills>
@@ -20,14 +22,40 @@ ul.nav.nav-pills {
 	                            <a class="font-logo">Data</a> Bergulir
 	                            <p class="font-info">by Tortech</p>
 	                        </div>
+
 	                        <b-nav-item :active="navigation['dashboard']" v-showMenu @click="gotoPage('/dashboard')">
-	                            <font-awesome-icon icon="tachometer-alt" /> Dashboard</b-nav-item>
-	                        <b-nav-item v-b-toggle.collapse-1>
-	                            <font-awesome-icon icon="user" /> Penerima Dana Bergulir</b-nav-item>
+	                            <font-awesome-icon icon="tachometer-alt" /> Dashboard
+                          </b-nav-item>
+
+                          <b-nav-item :active="navigation['master-pemohon-master']" v-showMenu @click="gotoPage('/master-pemohon-master')">
+	                            <font-awesome-icon icon="tachometer-alt" /> Master Pemohon
+                          </b-nav-item>
+
+                          <b-nav-item :active="navigation['proposal-tahap-1']" v-showMenu @click="gotoPage('/proposal-tahap-1')">
+	                            <font-awesome-icon icon="tachometer-alt" /> Register Proposal
+                          </b-nav-item>
+
+                          <b-nav-item :active="navigation['register-survey-master']" v-showMenu @click="gotoPage('/register-survey-master')">
+	                            <font-awesome-icon icon="tachometer-alt" /> Register Survey
+                          </b-nav-item>
+
+                          <b-nav-item :active="navigation['register-surveyor-master']" v-showMenu @click="gotoPage('/register-surveyor-master')">
+	                            <font-awesome-icon icon="tachometer-alt" /> Register Surveyor
+                          </b-nav-item>
+
+                          <b-nav-item :active="navigation['proposal-master']" v-showMenu @click="gotoPage('/proposal-master')">
+	                            <font-awesome-icon icon="tachometer-alt" /> Proposal
+                          </b-nav-item>
+
+                          <b-nav-item :active="navigation['analisa-proposal--master']" v-showMenu @click="gotoPage('/analisa-proposal-master')">
+	                            <font-awesome-icon icon="tachometer-alt" /> Analisa Proposal
+                          </b-nav-item>
+	                        <!-- <b-nav-item v-b-toggle.collapse-1>
+	                            <font-awesome-icon icon="user" /> master Dana Bergulir</b-nav-item>
 	                        <b-collapse visible id="collapse-1">
 	                            <b-nav vertical>
-	                                <b-nav-item :active="navigation['penerima-pemohon-master']"
-                                    @click="gotoPage('/penerima-pemohon-master')">
+	                                <b-nav-item :active="navigation['master-pemohon-master']"
+                                    @click="gotoPage('/master-pemohon-master')">
 	                                  <font-awesome-icon icon="user-friends" /> Master Pemohon
                                   </b-nav-item>
 	                                <b-nav-item :active="navigation['proposal-tahap-1']"
@@ -40,16 +68,18 @@ ul.nav.nav-pills {
 	                                <b-nav-item>Pembayaran Multi</b-nav-item>
 	                                <b-nav-item>Pembayaran</b-nav-item>
 	                            </b-nav>
-	                        </b-collapse>
+	                        </b-collapse> -->
+
+<!--
 	                        <b-nav-item>Surat Tanda Setoran</b-nav-item>
 	                        <b-nav-item>Laporan</b-nav-item>
-	                        <b-nav-item>Utilitas</b-nav-item>
+	                        <b-nav-item>Utilitas</b-nav-item> -->
 
 	                    </b-nav>
 	                </div>
 	            </div>
 	          </div>
-            <div class="col">
+            <div class="col-9 pr-0" style="max-width: 76% !important;">
                 <div>
                     <div class="row row-cols-1">
                         <div id="top-navigation" class=" col fixed-top">
@@ -117,16 +147,35 @@ export default Vue.extend({
         if(val.includes("dashboard")) {
           this.getNavigationActive(this.navigation, "dashboard")
         }
-        if(val.includes("penerima-pemohon")) {
-          this.getNavigationActive(this.navigation, "penerima-pemohon")
+        if(val.includes("master-pemohon")) {
+          this.getNavigationActive(this.navigation, "master-pemohon")
         }
         if(val.includes("proposal-tahap")) {
           this.getNavigationActive(this.navigation, "proposal-tahap")
         }
+        if(val.includes("register-survey-master")) {
+          this.getNavigationActive(this.navigation, "register-survey-master")
+        }
+        if(val.includes("register-surveyor-master")) {
+          this.getNavigationActive(this.navigation, "register-surveyor-master")
+        }
+        if(val.includes("proposal-master")) {
+          this.getNavigationActive(this.navigation, "proposal-master")
+        }
+        if(val.includes("analisa-proposal")) {
+          this.getNavigationActive(this.navigation, "analisa-proposal")
+        }
+        // if(val.includes("analisa-proposal-master")) { // tambahan
+        //   this.getNavigationActive(this.navigation, "analisa-proposal--master")
+        // }
       }
     },
     mounted(){
-      this.getNavigationActive(this.navigation, this.$route.name)
+      if(this.$route.name == "analisa-proposal-master") {
+        this.getNavigationActive(this.navigation, "analisa-proposal")
+      } else {
+        this.getNavigationActive(this.navigation, this.$route.name)
+      }
     },
     methods: {
       getNavigationActive(object, val){
@@ -147,8 +196,12 @@ export default Vue.extend({
             selected: "",
             navigation: {
               'dashboard': true,
-              'penerima-pemohon-master': true,
+              'master-pemohon-master': true,
               'proposal-tahap-1': true,
+              "register-survey-master":true,
+              "register-surveyor-master":true,
+              "proposal-master":true,
+              "analisa-proposal--master":true,
             }
         };
     },

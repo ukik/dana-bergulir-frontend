@@ -1,0 +1,6 @@
+1. Request from server
+2. If exist store to local data
+3. Watch local data to sync to vuex
+4. Vuex as reference boosting performance
+
+5. Post/Put data to server using local data
