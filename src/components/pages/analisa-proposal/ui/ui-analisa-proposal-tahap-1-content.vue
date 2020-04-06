@@ -1,162 +1,173 @@
 <style scoped>
+select, input, textarea {
+	background: #FFFFFF;
+	border-radius: 10px !important;
+}
 
 input {
 	height: 30px;
 }
 
-textarea, input, select, .custom-file-label {
-	background: #FFFFFF;
-	border-radius: 10px !important;
-}
-
 span {
-	font-family: Montserrat_Light;
+	font-family: Montserrat_Medium;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 15px;
 	line-height: 18px;
 
 	color: #555555;
+
+	display: contents;
 }
 
-button, .button-biru, .button-orange {
-	border-radius: 10px;
-	border-width: 0px;
+#table-peningkatan-diharapkan th {
+	vertical-align: middle;
+}
 
-	font-family: Montserrat_Light;
+.table-header {
+	font-family: Montserrat_Bold;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 12px;
+	line-height: 15px;
+	/* identical to box height */
+
 	text-align: center;
-
-	color: #ffffff;
+	color: #252323;
 }
 
-.column-right {
-  float: right;
-}
-
-.cancel {
-	background: #C54F4F;
-}
-
-.submit, .button-biru {
-	background: #58C0E7;
-}
-
-.button-orange {
-	background: #FCAD46;
-}
-
-.col-4 {
-	padding-left: 0px;
+.readonly {
+	background: #B8B0B0;
 }
 
 </style>
 
 <template>
-<fragment>
-<div class="input-group">
-	<form class="col-10" ref="form"  @submit.prevent="onSubmit"  @change="handleChange" @invalid.capture.prevent="handleInvalid">
+<form>
+	<b-table-simple class="table b-table table-hover bg-white table-bordered">
+		<b-thead head-variant="" class="bg-white table-header text-center">
+			<b-tr>
+				<b-th colspan="1" rowspan="2">Nomor</b-th>
+				<b-th colspan="1" rowspan="2">Analisa Data</b-th>
+				<b-th colspan="4">Kesesuaian Singkronisasi</b-th>
+				<b-th colspan="1" rowspan="2">Keterangan</b-th>
+			</b-tr>
+			<b-tr>
+				<b-th colspan="1" width="20">1</b-th>
+				<b-th colspan="1" width="20">2</b-th>
+				<b-th colspan="1" width="20">3</b-th>
+				<b-th colspan="1" width="20">4</b-th>
+			</b-tr>
+		</b-thead>
+		<b-tbody>
+			<b-tr v-for="(item, index) in items" :key="index">
+				<b-td width="10" colspan="1">{{ index+1 }}</b-td>
+				<b-td width="300" colspan="1">{{ item.deskripsi }}</b-td>
 
+				<!-- <b-td colspan="1">3</b-td>
+				<b-td colspan="1">4</b-td>
+				<b-td colspan="1">2</b-td> -->
+				<b-td v-for="(i, index1) in 4" :key="'i'+index1" colspan="1">
+					<!-- <radio :propsValue="i+1" :propsName="'radio'+i" :propsChecked="item.value == (i+1)" /> -->
+					<radio :name="index+'radio'" required @input="onRadioChecked(index, i+1)" :value="i+1" :checked="item.value == (i+1)">
 
+					</radio>
+				</b-td>
 
-		<div class="mt-3">
-			<div class="column-right">
-
-				<div id="button-prev" @click.prevent="gotoPage('/proposal-master')" class="btn non-next mr-2 pl-3 pr-3">Batal</div>
-
-				<button type="submit" @click.prevent="onSubmit" class="btn btn-primary submit mr-2 pl-3 pr-3">Simpan</button>
-				<button type="reset" @click.prevent="clearForm" class="btn btn-danger danger pl-3 pr-3">Reset</button>
-			</div>
-		</div>
-	</form>
-
-</div>
-</fragment>
+				<b-td width="200" colspan="1">
+					<div class="input-group">
+						: <textarea class="form-control ml-2" rows="3"></textarea>
+					</div>
+				</b-td>
+			</b-tr>
+		</b-tbody>
+		<b-tbody head-variant="" class="bg-white table-header text-center">
+			<b-tr>
+				<b-th colspan="2">Jumlah</b-th>
+				<b-th colspan="4" class="readonly">{{ total_singkronisasi }}</b-th>
+				<!-- <b-th colspan="1" class="readonly">2</b-th>
+				<b-th colspan="1" class="readonly">3</b-th>
+				<b-th colspan="1" class="readonly">4</b-th>
+				<b-th colspan="1" class="readonly">2</b-th> -->
+			</b-tr>
+			<b-tr>
+				<b-th colspan="2">Hasil Analisa</b-th>
+				<b-th colspan="4" class="readonly">{{ hasil_analisa }}</b-th>
+			</b-tr>
+		</b-tbody>
+	</b-table-simple>
+</form>
 </template>
 
 <script>
 
 export default {
-	watch: {
-		// INIT DATA
-		'$route.name':function(val) {
-			// console.log(val)
-			if(val == 'proposal-detail') {
-				this.initDatabasePayload()
+	computed: {
+		total_singkronisasi() {
+			let n = 0
+			for (var i = 0; i < this.items.length; i++) {
+				n += 4 //this.items[i].value
 			}
-			// console.log("this.database.payload", this.database.payload)
+			return n
+		},
+		hasil_analisa(){
+			const total = this.items.length * 4
+			if(this.total_singkronisasi >= (total / 2)) {
+				return "SINGKRON"
+			} else {
+				return "TIDAK SINGKRON"
+			}
 		}
 	},
-	created(){
-		// INIT DATA
-		this.initDatabasePayload()
-		// this.database.payload = this.getters_proposal(this.$route.params.id)
-	},
-	data() {
-    return {
-			database: {
-				payload: {
-					nomor_proposal:null,
-					nama_ukm_proposal:null,
-					alamat_ukm_proposal:null,
-					telepon_ukm_proposal:null,
-					tanggal_berdiri_ukm_proposal:null,
+	methods: {
+		onRadioChecked(index, value) {
+			for (var i = 0; i < this.items.length; i++) {
+				if(index == i) {
+					this.items[i].value = value
 				}
 			}
-    }
-  },
-
-	methods: {
-		initDatabasePayload(){
-			const get = this.getters_proposal_edit({
-				index: this.$route.params.id
-			})
-			console.log(get);
-			if(get) {
-				this.database.payload = get
-			}
-		},
-		onEdit() {
-			// console.log(data)
-			this.$router.push({
-					name:'proposal-tahap-1',
-					params: {
-						id: this.database.payload.nomor_proposal //data.item.kode_proposal
-					}
-			 })
-		},
-		clearForm(){
-			this.fieldErrors = {}
-			// this.imagePreview = "https://picsum.photos/250/250/?image=58",
-			this.database.payload = {
-				nomor_proposal:null,
-				nama_ukm_proposal:null,
-				alamat_ukm_proposal:null,
-				telepon_ukm_proposal:null,
-				tanggal_berdiri_ukm_proposal:null,
-			}
-		},
-		onSubmit: window._.debounce(function() {
-			// console.log(this.$refs.form.reportValidity(), this.$refs.form.reportValidity())
-			if (!this.$refs.form.checkValidity()) {
-				// this.$refs.form.reportValidity() // popup required tooltip jika pakai handleInvalid maka ini tidak perlu
-
-				this.onSnotifyInput()
-				return
-      }
-
-			new Promise(resolve => {
-				resolve(this.dispatch_proposal_edit_payload_items({
-					index: this.$route.params.id,
-					item: this.database.payload
-				}))
-			}).then(result => {
-				this.$router.replace("/proposal-master")
-				this.clearForm()
-			})
-		}, 250),
+		}
+	},
+	data() {
+		return {
+			items: [
+				{
+					deskripsi:`Status pinjaman sejenis KUMKM sebelumnya a. Belum Pernah Mendapatkan Pinjaman Sebelumnya b. Sudah Pernah Mendapatkan Pinjaman KUMKM dan telah Lunas c. Sudah Pernah Mendapatkan Pinjaman KUMKM dan belum Lunas`,
+					value:2,
+					catatan:"",
+				},
+				{
+					deskripsi:`Pengecekan keabsahan dokumen a. Dokumen Legalitas usaha (SKU, SITU, SIUP, HO, TDP, TDI, IUMK, ………………..……………………………………………….) b. Dokumen Jaminan / Agunan (BPKB, SERTIFIKAT RUMAH / TANAH, PPAT, SHMT, ………………..…) c. Proposal d. Surat Keterangan Domisili Dari Kepala Kampung e. Surat Rekomendasi dari kecamatan setempat`,
+					value:2,
+					catatan:"",
+				},
+				{
+					deskripsi:`keabsahan data - data pelengkap (nota - nota, print out buku tabungan, slip gaji, dll)`,
+					value:3,
+					catatan:"",
+				},
+				{
+					deskripsi:`Singkronisasi data laba-rugi dan managemen keuangan pribadi dengan hasil survey`,
+					value:4,
+					catatan:"",
+				},
+				{
+					deskripsi:`Singkronisasi nilai agunan yang diberikan`,
+					value:1,
+					catatan:"",
+				},
+				{
+					deskripsi:`singkronisasi nilai pengajuan pinjaman dengan rincian kebutuhan dana dan hasil wawancara`,
+					value:1,
+					catatan:"",
+				},
+				{
+					deskripsi:`Lain - lain :`,
+					value:null,
+					catatan:"",
+				},
+			]
+		}
 	}
 }
 </script>

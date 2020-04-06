@@ -17,6 +17,11 @@ body {
 	background: #ECF0F1 !important;
 }
 
+.dark-bordered {
+    border: 1px solid #949494 !important;
+}
+
+
 .required-alert {
 	font-family: sans-serif;
   margin-left: 5px;
@@ -64,6 +69,14 @@ body {
     opacity: 1;
 }
 
+
+.btn-radius {
+	border-radius: 20px !important;
+}
+
+.column-right {
+  float: right;
+}
 
 /* table body-cell font-size */
 td {

@@ -10,7 +10,5 @@
 		    <div class="col"><ui-dashboard-grafik-chart /></div>
 		  </div>
 		</b-col>
-		<b-col>
-		</b-col>
 	</b-row>
 </template>

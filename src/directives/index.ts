@@ -45,6 +45,23 @@ Vue.directive("analisa-proposal", {
 		}
 });
 
+Vue.directive("remedial-master", {
+		inserted(el, binding, vnode) {
+				// console.log(binding.value)
+				el.style.background = "#dc3545";
+				el.style.borderRadius = '20px';
+				el.style.color = '#fff';
+				el.style.padding = '5px 10px';
+		},
+		update(el, binding, vnode) {
+				// console.log(binding.value)
+				el.style.background = "#dc3545";
+				el.style.borderRadius = '20px';
+				el.style.color = '#fff';
+				el.style.padding = '5px 10px';
+		}
+});
+
 Vue.directive("required", {
 		/*
 		inserted(el, binding, vnode) {

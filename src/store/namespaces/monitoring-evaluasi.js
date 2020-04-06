@@ -1,0 +1,17 @@
+const monitoring_evaluasi = {
+	getters_monitoring_evaluasi:"getters_monitoring_evaluasi",
+	getters_monitoring_evaluasi_edit:"getters_monitoring_evaluasi_edit",
+
+	mutation_monitoring_evaluasi:"mutation_monitoring_evaluasi",
+  mutation_monitoring_evaluasi_add_payload_items:"mutation_monitoring_evaluasi_add_payload_items",
+  mutation_monitoring_evaluasi_edit_payload_items:"mutation_monitoring_evaluasi_edit_payload_items",
+	mutation_monitoring_evaluasi_delete_payload_items:"mutation_monitoring_evaluasi_delete_payload_items",
+
+	dispatch_monitoring_evaluasi:"dispatch_monitoring_evaluasi",
+  dispatch_monitoring_evaluasi_add_payload_items:"dispatch_monitoring_evaluasi_add_payload_items",
+  dispatch_monitoring_evaluasi_edit_payload_items:"dispatch_monitoring_evaluasi_edit_payload_items",
+	dispatch_monitoring_evaluasi_delete_payload_items:"dispatch_monitoring_evaluasi_delete_payload_items",
+
+}
+
+module.exports = monitoring_evaluasi

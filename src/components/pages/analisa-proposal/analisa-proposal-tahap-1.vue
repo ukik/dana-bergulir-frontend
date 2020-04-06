@@ -73,34 +73,40 @@ span {
 <template>
 	<div>
 		<div class="pt-2 pb-4">
-			<ui-analisa-proposal-meta title="A. Profil UMKM (Info Umum)" />
+			<ui-analisa-proposal-meta title="Singkronisasi" />
 		</div>
 
 		<div class="mb-2">
-			<button v-pointer-proposal="badge" v-for="(badge, index) in badges" :class="badgeColor(badge.status)" @click="onNavBadge(badge, index)">
+			<button v-pointer-proposal="badge" v-for="(badge, index) in badges"  :key="index" :class="badgeColor(badge.status)" @click="onNavBadge(badge, index)">
 				<span> {{ badge.label }}</span>
 			</button>
 		</div>
 
-		<ui-proposal-toolbar class="mb-4">
+		<ui-proposal-toolbar-tahap class="mb-4">
 			<!-- <button v-pointer-proposal="badge" v-for="(badge, index) in badges" :class="badgeColor(badge.status)" @click="onNavBadge(badge, index)">
 				<span> {{ badge.label }}</span>
 			</button> -->
-		</ui-proposal-toolbar>
+		</ui-proposal-toolbar-tahap>
 
-
+		<h5 class="text-center pb-3">ANALISA SINGKRONISASI DATA</h5>
 		<div class="col-12 p-4 section-parent">
 
 			<div class="col-12">
-				<ui-analisa-proposal-tahap-1-content-singkronisasi :propsToolbar="true" :propsDisabled="false" />
+				<ui-analisa-proposal-tahap-1-content />
 			</div>
 		</div>
 
 		<b-col cols="12">
 			<div class="mt-3">
 				<div class="column-right">
+          <div id="button-prev" @click.prevent="$router.back()" class="btn non-next mr-2 pl-3 pr-3">Kembali</div>
 					<div id="button-print" @click.prevent="" class="btn print mr-2 pl-3 pr-3">Print</div>
-					<button type="submit" @click.prevent="" class="btn next mr-0 pl-3 pr-3">Simpan & Lanjut</button>
+					<button type="submit" @click.prevent="$router.push({
+							name:'analisa-proposal-tahap-2',
+							params: {
+								id: $route.params.id //data.item.kode_proposal
+							}
+					 })" class="btn next mr-0 pl-3 pr-3">Simpan & Lanjut</button>
 					<!-- <button type="submit" @click.prevent="onNext" class="btn print pl-3 pr-3">Finish</button>						 -->
 				</div>
 			</div>
@@ -109,18 +115,17 @@ span {
 	</div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
 
-import UiProposalToolbar from './ui/ui-proposal-toolbar'
+import UiProposalToolbarTahap from './ui/ui-proposal-toolbar-tahap'
 
-export default Vue.extend({
+export default {
 	components: {
-		UiProposalToolbar
+		UiProposalToolbarTahap
 	},
 	computed: {
 		badgeColor(){
-			return function(val:any) {
+			return function(val) {
 				switch (val) {
 					case "current":
 						return "btn color-current mr-2 mb-3 mt-2";
@@ -163,5 +168,5 @@ export default Vue.extend({
 		}
 	}
 
-});
+};
 </script>

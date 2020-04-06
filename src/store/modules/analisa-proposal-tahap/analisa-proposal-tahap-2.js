@@ -5,26 +5,30 @@ const {
 } = require("@/store/namespaces");
 
 const {
-	getters_analisa_proposal_tahap_2,
-	mutation_analisa_proposal_tahap_2,
-	dispatch_analisa_proposal_tahap_2,
+    getters_analisa_proposal_tahap_2,
+    mutation_analisa_proposal_tahap_2,
+    dispatch_analisa_proposal_tahap_2,
 } = analisa_proposal_tahap_2
 
+import {
+    database
+} from "@/models/analisa-proposal-tahap/analisa-proposal-tahap-2";
+
 const state = {
-	database: null,
+    database: database,
 };
 
 const getters = {
-		[getters_analisa_proposal_tahap_2]: (state) => {
-			return state.database
-		},
+    [getters_analisa_proposal_tahap_2]: (state) => {
+        return state.database
+    },
 };
 
 const mutations = {
-		[mutation_analisa_proposal_tahap_2]: (state, data) => {
-			return state.database = data
-			// console.log(data)
-		},
+    [mutation_analisa_proposal_tahap_2]: (state, data) => {
+        return state.database = data
+            // console.log(data)
+    },
 };
 
 // const plugin = {
@@ -34,11 +38,11 @@ const mutations = {
 // }
 
 const actions = {
-		[dispatch_analisa_proposal_tahap_2]: ({
-				commit
-		}, payload) => {
-			commit(mutation_analisa_proposal_tahap_2, payload);
-		},
+    [dispatch_analisa_proposal_tahap_2]: ({
+        commit
+    }, payload) => {
+        commit(mutation_analisa_proposal_tahap_2, payload);
+    },
 };
 
 // export this module.

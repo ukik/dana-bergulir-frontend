@@ -1,0 +1,17 @@
+const penagihan_piutang = {
+	getters_penagihan_piutang:"getters_penagihan_piutang",
+	getters_penagihan_piutang_edit:"getters_penagihan_piutang_edit",
+
+	mutation_penagihan_piutang:"mutation_penagihan_piutang",
+  mutation_penagihan_piutang_add_payload_items:"mutation_penagihan_piutang_add_payload_items",
+  mutation_penagihan_piutang_edit_payload_items:"mutation_penagihan_piutang_edit_payload_items",
+	mutation_penagihan_piutang_delete_payload_items:"mutation_penagihan_piutang_delete_payload_items",
+
+	dispatch_penagihan_piutang:"dispatch_penagihan_piutang",
+  dispatch_penagihan_piutang_add_payload_items:"dispatch_penagihan_piutang_add_payload_items",
+  dispatch_penagihan_piutang_edit_payload_items:"dispatch_penagihan_piutang_edit_payload_items",
+	dispatch_penagihan_piutang_delete_payload_items:"dispatch_penagihan_piutang_delete_payload_items",
+
+}
+
+module.exports = penagihan_piutang

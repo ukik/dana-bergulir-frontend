@@ -28,7 +28,7 @@ import CheckboxRadio from 'vue-checkbox-radio';
 Vue.use(CheckboxRadio);
 
 new Vue({
-  name:'111',
+  name:'11111',
   router,
   store,
   render: h => h(App)

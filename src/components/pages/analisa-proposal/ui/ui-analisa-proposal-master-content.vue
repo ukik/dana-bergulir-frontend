@@ -31,7 +31,7 @@ button {
 	font-family: Montserrat_Light;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 12px;
+	font-size: 14px;
 	/* line-height: 18px; */
 	text-align: center;
 
@@ -140,7 +140,7 @@ input {
 			<!-- Optional default data cell scoped slot -->
       <template v-slot:cell(action)="data">
 				<div class="text-center">
-	        <i @click="onEdit(data)" v-analisa-proposal v-hand>Analisa</i>
+	        <a @click="onEdit(data)" v-analisa-proposal v-hand class="btn btn-primary btn-radius pl-3 pr-3 text-white">Analisa</a>
 				</div>
         <!-- <i>{{ data.value }} {{ data.index }}</i> -->
       </template>
@@ -148,7 +148,7 @@ input {
 			<!-- Optional default data cell scoped slot -->
       <template v-slot:cell(status_proposal)="data">
 				<div class="text-center">
-	        <i v-status-proposal>{{ data.value }} {{ data.index }}</i>
+	        <a v-status-proposal class="btn btn-danger danger pl-3 pr-3 text-white">{{ data.value }}</a>
 				</div>
       </template>
 
@@ -177,14 +177,13 @@ input {
 </fragment>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
 
 import { database } from '@/models/analisa-proposal'
 
 import UiProposalToolbar from './ui-proposal-toolbar'
 
-export default Vue.extend({
+export default {
 	components: {
 		UiProposalToolbar
 	},
@@ -297,5 +296,5 @@ export default Vue.extend({
 			})
 		}
 	}
-});
+};
 </script>

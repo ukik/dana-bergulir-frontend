@@ -12,6 +12,9 @@ const RegisterSurvey = require('./register-survey')
 const RegisterSurveyor = require('./register-surveyor')
 const Proposal = require('./proposal')
 const AnalisaProposal = require('./analisa-proposal')
+const MonitoringEvaluasi = require('./monitoring-evaluasi')
+const Utilitas = require('./utilitas')
+const Penagihan = require('./penagihan')
 
 const routes = [
   {
@@ -26,6 +29,9 @@ const routes = [
       ...RegisterSurveyor,
       ...Proposal,
       ...AnalisaProposal,
+      ...MonitoringEvaluasi,
+      ...Utilitas,
+      ...Penagihan,
       {
         path: "/",
         redirect: "/dashboard"

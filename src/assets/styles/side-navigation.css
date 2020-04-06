@@ -40,12 +40,13 @@
 	padding: 10px 50px !important;
 }
 
-#side-navigation .active {
-	background: #58c0e7;
+/* #side-navigation .active { */
+.nav-pills .nav-link.active {
+	background: #58c0e7 !important;
 }
 
 #side-navigation li:active {
-	/* background: #58c0e7; */
+	/* background: #58c0e7 !important; */
 }
 
 #side-navigation li a {

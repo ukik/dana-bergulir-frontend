@@ -28,7 +28,7 @@ button {
 	font-family: Montserrat_Light;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 12px;
+	font-size: 14px;
 	text-align: center;
 
 	color: #ffffff;

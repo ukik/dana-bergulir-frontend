@@ -5,7 +5,7 @@
 
 		<form @submit.prevent="" class="input-group toolbar">
 			<div class="col-12">
-				<h5 class="subtitle mb-3">Cari Proposal</h5>
+				<h5 class="subtitle mb-3">Singkronisasi</h5>
 			</div>
 			<div class="col-6">
 				<!-- Nomor Proposal -->
@@ -20,10 +20,10 @@
 					</b-col>
 			  </b-row>
 
-				<!-- Nama Usaha -->
+				<!-- Alamat Pemilik -->
 				<b-row class="mb-2">
 					<b-col class="col-4">
-						<span>Nama Usaha</span>
+						<span>Alamat Pemilik</span>
 					</b-col>
 					<b-col>
 						<div class="input-group">
@@ -32,17 +32,18 @@
 					</b-col>
 				</b-row>
 
-				<!-- Tanggal Awal -->
+				<!-- Kode -->
 				<b-row class="mb-2">
 					<b-col class="col-4">
-						<span>Tanggal Awal</span>
+						<span>Kode</span>
 					</b-col>
 					<b-col>
 						<div class="input-group">
-							: <input type="date" class="form-control ml-2" placeholder="">
+							: <input type="text" class="form-control ml-2" placeholder="">
 						</div>
 					</b-col>
 				</b-row>
+
 			</div>
 
 		<div class="col-6">
@@ -58,10 +59,10 @@
 				</b-col>
 		  </b-row>
 
-			<!-- Status -->
+			<!-- No Telp/HP -->
 			<b-row class="mb-2">
 				<b-col class="col-4">
-					<span>Status</span>
+					<span>No Telp/HP</span>
 				</b-col>
 				<b-col>
 					<div class="input-group">
@@ -70,31 +71,6 @@
 				</b-col>
 			</b-row>
 
-			<!-- Tanggal Akhir -->
-			<b-row class="mb-2">
-				<b-col class="col-4">
-					<span>Tanggal Akhir</span>
-				</b-col>
-				<b-col>
-					<div class="input-group">
-						: <input type="date" class="form-control ml-2" placeholder="">
-					</div>
-				</b-col>
-			</b-row>
-
-			<!-- Cari -->
-			<b-row class="mt-3 ml-2">
-				<b-col class="col-4">
-
-				</b-col>
-				<b-col>
-					<div class="input-group-append">
-						<button class="btn btn-cari btn-primary ">
-							<b>Cari</b> <font-awesome-icon icon="search" />
-						</button>
-					</div>
-				</b-col>
-			</b-row>
 
 		</div>
 
@@ -121,7 +97,7 @@ button {
 	font-family: Montserrat_Light;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 12px;
+	font-size: 14px;
 	/* line-height: 18px; */
 	text-align: center;
 

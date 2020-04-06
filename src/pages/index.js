@@ -4,6 +4,9 @@ require("./register-survey")
 require("./register-surveyor")
 require("./proposal")
 require("./analisa-proposal")
+require("./monitoring-evaluasi")
+require("./utilitas")
+require("./penagihan")
 
 import Vue from "vue"
 

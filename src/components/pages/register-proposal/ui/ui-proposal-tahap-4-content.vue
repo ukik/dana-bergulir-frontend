@@ -409,7 +409,6 @@ button:hover, .btn-delete:hover, .btn-add:hover {
 import { 	database } from '@/models/proposal/proposal-tahap-4'
 
 export default {
-  name: 'ui-proposal-tahap-4-content',
 	props: ["propsToolbar","propsDisabled"],
 	watch: {
 		database: {

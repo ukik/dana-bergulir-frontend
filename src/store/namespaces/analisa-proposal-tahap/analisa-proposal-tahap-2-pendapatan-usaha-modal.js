@@ -1,0 +1,8 @@
+
+const analisa_proposal_tahap_2_pendapatan_usaha_modal = {
+	getters_analisa_proposal_tahap_2_pendapatan_usaha_modal:'getters_analisa_proposal_tahap_2_pendapatan_usaha_modal',
+	mutation_analisa_proposal_tahap_2_pendapatan_usaha_modal:'mutation_analisa_proposal_tahap_2_pendapatan_usaha_modal',
+	dispatch_analisa_proposal_tahap_2_pendapatan_usaha_modal:'dispatch_analisa_proposal_tahap_2_pendapatan_usaha_modal',
+}
+
+module.exports = analisa_proposal_tahap_2_pendapatan_usaha_modal

@@ -166,8 +166,25 @@ small {
 							<span class="font-weight-bolder"> {{ database.payload.payload_pinjaman_diajukan | terbilang }}</span>
 							<div class="input-group mt-4  mb-1">
 								<span>dengan Jangka Waktu Pinjaman Selama :</span>
-							  <input id="payload_jangka_waktu" name="payload_jangka_waktu" :disabled="propsDisabled" :required="true" v-model="database.payload.payload_jangka_waktu" type="number" max="100" min="1" class="form-control ml-2 mr-2 col-3" placeholder="0">
-								<span>Bulan</span>
+
+								<b-form-select
+						      v-model="database.payload.payload_jangka_waktu"
+						      :options="[
+										{ item: null, name: ':: Pilih Waktu ::', notEnabled: true },
+										{ item: 12, name: '12 Bulan' },
+										{ item: 24, name: '24 Bulan' },
+										{ item: 36, name: '36 Bulan' },
+									]"
+						      class="col-3 ml-2 mb-2"
+						      value-field="item"
+						      text-field="name"
+						      disabled-field="notEnabled"
+									id="payload_jangka_waktu" name="payload_jangka_waktu"
+			 						:disabled="propsDisabled" :required="true"
+						    ></b-form-select>
+
+							  <!-- <input id="payload_jangka_waktu" name="payload_jangka_waktu" :disabled="propsDisabled" :required="true" v-model="database.payload.payload_jangka_waktu" type="number" max="100" min="1" class="form-control ml-2 mr-2 col-3" placeholder="0">
+								<span>Bulan</span> -->
 
 								<!-- Required -->
 								<p v-if="fieldErrors.payload_jangka_waktu" v-vmiddle class="col pt-1 required-alert text-left">wajib dilengkapi (1 - 100)</p>

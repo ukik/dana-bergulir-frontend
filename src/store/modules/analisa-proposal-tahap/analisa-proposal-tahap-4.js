@@ -10,8 +10,13 @@ const {
 	dispatch_analisa_proposal_tahap_4,
 } = analisa_proposal_tahap_4
 
+
+import {
+    database
+} from "@/models/analisa-proposal-tahap/analisa-proposal-tahap-4";
+
 const state = {
-	database: null,
+    database: database,
 };
 
 const getters = {

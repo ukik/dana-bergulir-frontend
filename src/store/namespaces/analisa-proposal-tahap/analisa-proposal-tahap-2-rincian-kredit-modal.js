@@ -1,0 +1,8 @@
+
+const analisa_proposal_tahap_2_rincian_kredit_modal = {
+	getters_analisa_proposal_tahap_2_rincian_kredit_modal:'getters_analisa_proposal_tahap_2_rincian_kredit_modal',
+	mutation_analisa_proposal_tahap_2_rincian_kredit_modal:'mutation_analisa_proposal_tahap_2_rincian_kredit_modal',
+	dispatch_analisa_proposal_tahap_2_rincian_kredit_modal:'dispatch_analisa_proposal_tahap_2_rincian_kredit_modal',
+}
+
+module.exports = analisa_proposal_tahap_2_rincian_kredit_modal
